@@ -1,24 +1,88 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import ZooList from "./components/ZooList";
 
 function App() {
+  const [animals, setAnimals] = useState([])
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimals([
+        {
+          "id": 1,
+          "species": "zebra",
+          "class": "mammal",
+          "eatsMeat": false,
+          "weight": 200
+        },
+        {
+          "id": 2,
+          "species": "lion",
+          "class": "mammal",
+          "eatsMeat": true,
+          "weight": 150
+        },
+        {
+          "id": 3,
+          "species": "whale shark",
+          "class": "fish",
+          "eatsMeat": false,
+          "weight": 5000
+        },
+        {
+          "id": 4,
+          "species": "penguin",
+          "class": "bird",
+          "eatsMeat": true,
+          "weight": 5
+        },
+        {
+          "id": 5,
+          "species": "bald eagle",
+          "class": "bird",
+          "eatsMeat": true,
+          "weight": 10
+        },
+        {
+          "id": 6,
+          "species": "banana slug",
+          "class": "insect",
+          "eatsMeat": false,
+          "weight": 1
+        },
+        {
+          "id": 7,
+          "species": "manatee",
+          "class": "mammal",
+          "eatsMeat": false,
+          "weight": 75
+        },
+        {
+          "id": 8,
+          "species": "gorilla",
+          "class": "mammal",
+          "eatsMeat": false,
+          "weight": 100
+        },
+        {
+          "id": 9,
+          "species": "cat",
+          "class": "mammal",
+          "eatsMeat": true,
+          "weight": 4
+        },
+        {
+          "id": 10,
+          "species": "frog",
+          "class": "amphibian",
+          "eatsMeat": false,
+          "weight": 2
+        }
+      ])
+    }, 1500)
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Zoo App!</h1>
+      <ZooList animals={animals} />
     </div>
   );
 }

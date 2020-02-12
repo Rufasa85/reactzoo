@@ -1,0 +1,5 @@
+.ZooItem {
+    background: chartreuse;
+    display: flex;
+    justify-content: space-between;
+}
